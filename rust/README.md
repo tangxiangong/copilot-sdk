@@ -97,6 +97,22 @@ async fn main() -> Result<()> {
 }
 ```
 
+## Examples
+
+The SDK includes several comprehensive examples:
+
+- **[stdio_example.rs](examples/stdio_example.rs)** - Basic usage with stdio transport
+- **[tcp_example.rs](examples/tcp_example.rs)** - Basic usage with TCP transport
+- **[tools_example.rs](examples/tools_example.rs)** - Custom tool definition and execution
+- **[permissions_example.rs](examples/permissions_example.rs)** - Permission request handling
+- **[resume_session_example.rs](examples/resume_session_example.rs)** - Session persistence and resumption
+
+Run an example:
+
+```bash
+cargo run --example tools_example
+```
+
 ## API Reference
 
 ### Client
@@ -341,6 +357,23 @@ When the schema changes:
 1. Review the changes in copilot-agent-runtime
 2. Update `src/generated/session_events.rs` manually
 3. Ensure consistency with other SDK implementations
+
+## Testing
+
+The SDK includes comprehensive E2E tests:
+
+```bash
+# Run all tests
+cargo test
+
+# Run only unit tests
+cargo test --lib
+
+# Run E2E tests (requires test harness)
+cargo test --test e2e_session_tests
+cargo test --test e2e_tools_tests
+cargo test --test e2e_permissions_tests
+```
 
 ## License
 
